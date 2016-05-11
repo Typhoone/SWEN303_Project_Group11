@@ -20,6 +20,13 @@
 		color: #000000;
 	}
 
+	#main{
+		margin-right: -8px;
+		margin-left: -8px;
+		min-height: 50px;
+		min-width: 50px;
+	}
+
 	#toolbar{
 		background: #B2D234;
 		margin-right: -8px;

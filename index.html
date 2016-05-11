@@ -13,6 +13,7 @@
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="bower_components/paper-input/paper-input.html">
+  <link rel="import" href="bower_components/paper-material/paper-material.html">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
@@ -35,8 +36,13 @@
     <paper-icon-button raised noink id="searchButton" icon="icons:search" title="Search" on-tap="search"></paper-icon-button>
     <div id="searchDiv"><paper-input type="search" id="search" label="Search here..."></paper-input></div>       
     <paper-button raised noink id="sign-in-button">Sign In</paper-button>
-
   </paper-toolbar>
+  <paper-material id="main">
+
+  <h1 id="animationText"></h1>
+
+  </paper-material>
+
   <div id="editable">
     <iron-collapse id="collapse"></iron-collapse>
   </div>
