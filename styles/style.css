@@ -1,46 +1,53 @@
 *{
 	font-family: 'Roboto', 'Noto', sans-serif;
+	color: #000000;
 }
 
-.invisible{	/* A class to simply keep the HTML, which I copy over to the collapse, to be invisible. */
-	display: none;
-	margin: 16px;
-}
+/*The 3 colors for our site are:
+	- #B2D234 - Green
+	- #776B5D - Browny/Grey
+	- #A7A9AC - Grey
+	*/
 
-.rate-content{ /* Background image on paper-card, fade it to become a tad darker. */
-	background-image: linear-gradient(
-		rgba(0, 0, 0, 0.6),
-		rgba(0, 0, 0, 0.6)
-		),
-	url('../images/dark_tile.jpg');
-	border-bottom-left-radius: 5px;
+	.invisible{	/* A class to simply keep the HTML, which I copy over to the collapse, to be invisible. */
+		display: none;
+		margin: 16px;
+	}
+
+	.text{
+		font-weight: 200;
+		margin: 16px;
+		color: #000000;
+	}
+
+	#toolbar{
+		background: #B2D234;
+		border-radius: 5px;
+	}
+
+	#collapse{
+		margin-top: 4px;
+		font-weight: 200;
+		border: solid;
+		border-width: 1px;
+		border-radius: 5px;
+		border-color: #8e8c83;
+		box-shadow: 10px 10px 5px #888888;
+		background-color: #000F80;
+		/*background-color: #3C3EE8;*/
+	}
+
+	/*Below here I am simply saving some useful css from my previous project that I think I will probably need later.*/
+
+	.rate-content{ /* Background image on paper-card, fade it to become a tad darker. */
+		background-image: linear-gradient(
+			rgba(0, 0, 0, 0.6),
+			rgba(0, 0, 0, 0.6)
+			),
+		url('../images/dark_tile.jpg');
+		border-bottom-left-radius: 5px;
 	/*overflow: hidden; Can't hide overflow because it affects tooltips. Doesn't seem to affect 
 	image anyway.*/
-}
-
-.text{
-	font-weight: 200;
-	margin: 16px;
-	color: #FFFFFF;
-}
-
-
-
-#toolbar{
-	background: #303F9F;
-	border-radius: 5px;
-}
-
-#collapse{
-	margin-top: 4px;
-	font-weight: 200;
-	border: solid;
-	border-width: 1px;
-	border-radius: 5px;
-	border-color: #8e8c83;
-	box-shadow: 10px 10px 5px #888888;
-	background-color: #000F80;
-	/*background-color: #3C3EE8;*/
 }
 
 #animationText{
