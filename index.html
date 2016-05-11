@@ -12,23 +12,36 @@
   <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/paper-input/paper-input.html">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <!-- To style any of Polymer's custom properties it must be done 
+  here as most browsers still have issues with custom proprties. -->
+  <style is="custom-style">
+    #search{
+      --paper-input-container-focus-color: #A7A9AC;
+      max-width: 100%;
+      min-width: 100%;
+      float: right;
+    }
+  </style>
 </head>
 <body>
   <template is="dom-bind" id="app">
     <paper-toolbar id="toolbar">
-    <img src="./images/trader_logo.png" alt="Trader" id="logo" style="max-width: 100%; max-height: 100%">
-    <span class="title">Trader</span>
-  </paper-toolbar>
-<div id="editable">
-  <iron-collapse id="collapse"></iron-collapse>
-</div>
-</template>
+    <img src="./images/trader_logo.png" alt="Trader" id="logo">
+    <div id="title" class="title">Trader</div>
+    <paper-icon-button raised noink id="searchButton" icon="icons:search" title="Search" on-tap="search"></paper-icon-button>
+    <div id="searchDiv"><paper-input type="search" id="search" label="Search here..."></paper-input></div>       
+    <paper-button raised noink id="sign-in-button">Sign In</paper-button>
 
-  <!-- ***************ABOUT*ME*************** -->
-  <!-- build:js scripts/app.js -->
-  <script src="./app.js"></script>
-  <!-- endbuild-->
+  </paper-toolbar>
+  <div id="editable">
+    <iron-collapse id="collapse"></iron-collapse>
+  </div>
+</template>
+<!-- Run the JS -->
+<script src="./app.js"></script>
 </body>
 </html>
