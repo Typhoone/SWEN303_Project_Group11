@@ -21,7 +21,7 @@
   here as most browsers still have issues with custom proprties. -->
   <style is="custom-style">
     #search{
-      --paper-input-container-focus-color: #A7A9AC;
+      --paper-input-container-focus-color: #333;
       max-width: 100%;
       min-width: 100%;
       float: right;
@@ -38,14 +38,20 @@
     <paper-button raised noink id="sign-in-button">Sign In</paper-button>
   </paper-toolbar>
   <paper-material id="main">
-
-  <h1 id="animationText"></h1>
-
-  </paper-material>
-
-  <div id="editable">
-    <iron-collapse id="collapse"></iron-collapse>
+  <div id="animationContainer">
+    <h1 id="animationText"></h1>
   </div>
+  <hr>
+  <iron-collapse id="collapse"></iron-collapse>
+</paper-material id="content">
+<div id="searchResults" class="invisible">
+  <h2>You searched for <span id="searchedFor"></span>. Here's what we found!<br><br></h2>
+  <hr>
+</div>
+
+<!-- <div id="editable">
+  <iron-collapse id="collapse"></iron-collapse>
+</div> -->
 </template>
 <!-- Run the JS -->
 <script src="./app.js"></script>

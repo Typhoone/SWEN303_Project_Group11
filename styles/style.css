@@ -2,6 +2,24 @@
 	font-family: 'Roboto', 'Noto', sans-serif;
 	color: #000000;
 }
+hr{
+	border: none;
+	height: 3px;
+	/* Set the hr color */
+	color: #333; /* old IE */
+	background-color: #333; /* Modern Browsers */
+}
+h1{
+	font-size: 64px;
+	text-align: center;
+}
+
+h2{
+	font-size: 48px;
+	text-align: center;
+	overflow: auto;
+	margin-bottom: 0px;
+}
 
 /*The 3 colors for our site are:
 	- #B2D234 - Green
@@ -20,11 +38,17 @@
 		color: #000000;
 	}
 
+	.spacer{
+		flex: 1;
+	}
+
 	#main{
 		margin-right: -8px;
 		margin-left: -8px;
 		min-height: 50px;
 		min-width: 50px;
+		border: 3px solid #333;
+		background-color: #eee;
 	}
 
 	#toolbar{
@@ -60,13 +84,14 @@
 	#collapse{
 		margin-top: 4px;
 		font-weight: 200;
-		border: solid;
-		border-width: 1px;
-		border-radius: 5px;
-		border-color: #8e8c83;
-		box-shadow: 10px 10px 5px #888888;
-		background-color: #000F80;
-		/*background-color: #3C3EE8;*/
+	}
+
+	#animationContainer{
+		margin: 0 auto;
+	}
+
+	#content{
+		padding: 8px;
 	}
 
 	/*Below here I am simply saving some useful css from my previous project that I think I will probably need later.*/
@@ -87,7 +112,8 @@
 }
 
 #animationText{
-	float: right;
-	margin: 8px;
+	margin: 0 auto;
+	overflow: hidden;
+	white-space: nowrap;
 	/*-webkit-animation-delay: 5s;*/
 }
