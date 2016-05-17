@@ -5,10 +5,7 @@
   <title>Trader</title>
   <script src="bower_components/webcomponentsjs/webcomponents.js"></script> 
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="bower_components/paper-card/paper-card.html">
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="bower_components/iron-icons/communication-icons.html">
-  <link rel="import" href="bower_components/paper-tooltip/paper-tooltip.html">
   <link rel="import" href="bower_components/iron-collapse/iron-collapse.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
@@ -44,11 +41,18 @@
   <hr>
   <iron-collapse id="collapse"></iron-collapse>
 </paper-material id="content">
-<div id="searchResults" class="invisible">
-  <h2>You searched for <span id="searchedFor"></span>. Here's what we found!<br><br></h2>
+<div id="searchResultsContainer" class="invisible">
+  <h2>You searched for <span id="searchedFor"></span>. Here's what we found!</h2>
   <hr>
+  <div>
+    
+  </div>
 </div>
-
+<div id="noSearch" class="invisible">
+  <div id="emptySearchMessage" class="invisible">
+    <h2>You didn't search for anything!</h2>
+  </div>
+</div>
 <!-- <div id="editable">
   <iron-collapse id="collapse"></iron-collapse>
 </div> -->

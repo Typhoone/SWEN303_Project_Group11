@@ -11,11 +11,19 @@
     var noSearch = true; /*True when the user hasn't searched anything yet.*/
     var searchField = document.getElementById('search');
     var searchedFor = document.getElementById('searchedFor');
-    var searchResultsContainer = document.getElementById('searchResults');
+    var searchResultsContainer = document.getElementById('searchResultsContainer');
+    var noSearch = document.getElementById('emptySearchMessage');
     var previousSearch = '';
+
 
     var collapseToggled = false;
     var collapse = document.getElementById('collapse');
+
+    app.toggle = function(){
+      console.log('here1');
+      collapseToggled = !collapseToggled;
+      collapse.toggle();
+    }
 
     app.animateText = function(){
       animationTxt.innerHTML = animationArray[animationIndex];
@@ -32,15 +40,62 @@
       }, 3000);
     }
 
-    app.search = function(){
-      /*searchField.value; this is the content in the search*/
-      console.log(searchField.value);
-      searchedFor.innerHTML = searchField.value;
-      collapse.innerHTML = searchResultsContainer.innerHTML;
-      collapse.toggle();
-      previousSearch = searchField.value;
+    app.ensureCollapsed = function(){
+      if(collapseToggled){app.toggle();}
     }
 
+    app.ensureOpened = function(){
+     if(!collapseToggled){app.toggle();} 
+   }
+
+   app.query = function(text){
+      //TODO search the database.
+    }
+
+    app.connectToDatabase = function(){
+      //TODO connect to database.
+    }
+
+    app.displayResults = function(){
+      //TODO display the results which will be in a JSON format of our choosing.
+    }
+
+    app.signIn= function(){
+      //TODO Imperatively create a sign-in dialog box and appropriate sanity checks.
+    }
+
+    app.signUp = function(){
+      //TODO Imperatively create a sign-up dialog box and perform sanity checks.
+    }
+
+    app.search = function(){
+      /*searchField.value; this is the content in the search*/
+      var currentSearch = searchField.value;
+      console.log('\''+currentSearch+'\'');
+      console.log(currentSearch == '');
+      app.ensureCollapsed();
+      if(currentSearch == previousSearch){
+        if(!collapseToggled){
+          app.toggle();
+        }
+      }else if(currentSearch == ''){
+        setTimeout(function(){ 
+          collapse.innerHTML = noSearch.innerHTML;
+          app.ensureOpened();
+        }, animationDelay);
+      }else{
+        var results = app.query(currentSearch);
+        searchedFor.innerHTML = currentSearch;
+        collapse.innerHTML = searchResultsContainer.innerHTML;
+        setTimeout(function(){ 
+          app.displayResults(results);
+          app.ensureOpened();
+        }, animationDelay);
+      }
+      previousSearch = currentSearch;
+    }
+
+    //After everything is loaded and finished run these methods.
     app.animateText();
   });  
 })(document);
